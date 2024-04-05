@@ -1,5 +1,7 @@
 const express = require('express');
 const parse = require('./routes/parse');
+const chatbot = require('./routes/chatbot');
+const social = require('./routes/social');
 
 require('dotenv').config();
 
@@ -16,5 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', parse);
+app.use('/', chatbot);
+app.use('/', social);
 
 module.exports = app;
